@@ -94,7 +94,7 @@ public class SuperHuman extends Human {
         SuperHuman superman = new SuperHuman("Superman", "good", "Everything");
         superman.setAge(45);
         superman.setAddress("New York, NYC");
-        superman.setOccupation("Jornalist/Bad-ass");
+        superman.setOccupation("Journalist/Bad-ass");
         superman.setGender("m");
         System.out.printf("Name: %s\n", superman.getName());
         System.out.printf("Age: %s\n", superman.getAge());
