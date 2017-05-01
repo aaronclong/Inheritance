@@ -86,12 +86,21 @@ public class SuperHuman extends Human {
         ability = theirAbility;
     }
 
+    public String getAbilities() {
+        return ability;
+    }
+
     public static void main(String args[]){
         SuperHuman superman = new SuperHuman("Superman", "good", "Everything");
         superman.setAge(45);
         superman.setAddress("New York, NYC");
-        superman.setOccupation("Jornalist/Badass");
+        superman.setOccupation("Jornalist/Bad-ass");
         superman.setGender("m");
         System.out.printf("Name: %s\n", superman.getName());
+        System.out.printf("Age: %s\n", superman.getAge());
+        System.out.printf("Gender: %s\n", superman.getGender());
+        System.out.printf("Occupation: %s\n", superman.getAddress());
+        System.out.printf("Abilities: %s\n", superman.getAbilities());
+        System.out.printf("Occupation: %s\n", superman.getOccupation());
     }
 }
