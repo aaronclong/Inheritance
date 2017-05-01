@@ -1,4 +1,4 @@
-package io.github.aaronclong.inheritance;
+package io.github.aaronclong.inheritance.superhumans;
 
 /**
  * Created by aaronlong on 5/1/17.
