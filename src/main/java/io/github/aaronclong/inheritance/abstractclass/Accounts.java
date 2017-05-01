@@ -5,7 +5,7 @@ package io.github.aaronclong.inheritance.abstractclass;
  */
 public abstract class Accounts {
     private double credit = 0;
-    private double debit = 0;
+    private double balance = 0;
     private String accName;
 
     public enum Actions {
@@ -32,15 +32,15 @@ public abstract class Accounts {
         return credit;
     }
 
-    public double getDebit() {
-        return debit;
+    public double getBalance() {
+        return balance;
     }
 
-    public double withDrawDebit(double newDebit) {
-        if (debit-newDebit >= 0) {
-            debit = newDebit;
+    public double withDrawBalance(double newBalance) {
+        if (balance-newBalance >= 0) {
+            balance -= newBalance;
         }
-        return debit;
+        return balance;
     }
 
     public String getAccName() {
@@ -51,8 +51,8 @@ public abstract class Accounts {
         accName = newName;
     }
 
-    public void addFundsDebit(double amount) {
-        debit += amount;
+    public void addFunds(double amount) {
+        balance += amount;
     }
 
     public void payDebtCredit(double amount) {

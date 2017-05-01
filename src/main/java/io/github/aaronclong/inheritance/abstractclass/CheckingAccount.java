@@ -3,6 +3,7 @@ package io.github.aaronclong.inheritance.abstractclass;
 /**
  * Created by aaronlong on 5/1/17.
  */
+
 public class CheckingAccount extends Accounts {
     private String owner;
     private double creditLimit = 500;
@@ -13,20 +14,20 @@ public class CheckingAccount extends Accounts {
 
     public CheckingAccount(double debit) {
         super();
-        super.addFundsDebit(debit);
+        super.addFunds(debit);
     }
 
     public void atmTerminal(String action, double amount) {
-        if (action.equals(Actions.WITHDRAW.name())) super.withDrawDebit(amount);
+        if (action.equals(Actions.WITHDRAW.name())) super.withDrawBalance(amount);
         else if (action.equals(Actions.CREDIT.name())) borrow(amount);
-        else if (action.equals(Actions.ADDFUNDS.name())) super.addFundsDebit(amount);
+        else if (action.equals(Actions.ADDFUNDS.name())) super.addFunds(amount);
         else if (action.equals(Actions.PAYDEBT.name())) super.payDebtCredit(amount);
         atmPrint();
     }
 
     public void atmPrint() {
         System.out.println(getAccName());
-        System.out.printf("Debit account Balance %s\n", getDebit());
+        System.out.printf("Debit account Balance %s\n", getBalance());
         System.out.printf("Credit Balance %s\n", getCredit());
     }
 

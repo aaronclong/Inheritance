@@ -40,8 +40,8 @@ public class CheckingAccountTest {
     @Test
     public void checkDebit() {
         checking.atmTerminal("ADDFUNDS", 9000);
-        Assert.assertEquals("Checking adding values to debit", 10000, checking.getDebit(), .003);
+        Assert.assertEquals("Checking adding values to debit", 10000, checking.getBalance(), .003);
         checking.atmTerminal("DEBIT", 11000);
-        Assert.assertEquals("Checking overdraft on debit", 10000, checking.getDebit(), .003);
+        Assert.assertEquals("Checking overdraft on debit", 10000, checking.getBalance(), .003);
     }
 }
