@@ -33,6 +33,8 @@ public class CheckingAccountTest {
         Assert.assertEquals("Checking current debt on credit", 400.0, checking.getCredit(), .003);
         checking.atmTerminal("CREDIT", 150);
         Assert.assertEquals("Checking borrowing over credit limit", 400.0, checking.getCredit(), .003);
+        checking.atmTerminal("PAYDEBT", 400);
+        Assert.assertEquals("Checking paying down debt", 0.0, checking.getCredit(), .003);
     }
 
     @Test

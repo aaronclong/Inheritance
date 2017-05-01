@@ -20,10 +20,14 @@ public class CheckingAccount extends Accounts {
         if (action.equals(Actions.WITHDRAW.name())) super.withDrawDebit(amount);
         else if (action.equals(Actions.CREDIT.name())) borrow(amount);
         else if (action.equals(Actions.ADDFUNDS.name())) super.addFundsDebit(amount);
+        else if (action.equals(Actions.PAYDEBT.name())) super.payDebtCredit(amount);
+        atmPrint();
     }
 
     public void atmPrint() {
-
+        System.out.println(getAccName());
+        System.out.printf("Debit account Balance %s\n", getDebit());
+        System.out.printf("Credit Balance %s\n", getCredit());
     }
 
     public String getOwner() {
