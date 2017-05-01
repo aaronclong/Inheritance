@@ -4,18 +4,31 @@ package io.github.aaronclong.inheritance;
  * Created by aaronlong on 5/1/17.
  */
 public abstract class Accounts {
-    private double credit;
-    private double debit;
+    private double credit = 0;
+    private double debit = 0;
     private String accName;
+
+    public enum Actions {
+
+        WITHDRAW("WITHDRAW"),
+        CREDIT("CREDIT"),
+        ADDFUNDS("ADDFUNDS"),
+        PAYDEBT("PAYDEBT");
+
+        private String action;
+
+        Actions(String theAction){
+            action = theAction;
+        }
+    }
 
     public double getCredit() {
         return credit;
     }
 
+
     public double withDrawCredit(double newCredit) {
-        if (credit - newCredit >= 0){
-            credit -= newCredit;
-        }
+        credit += newCredit;
         return credit;
     }
 
@@ -25,7 +38,7 @@ public abstract class Accounts {
 
     public double withDrawDebit(double newDebit) {
         if (debit-newDebit >= 0) {
-            debit -= newDebit;
+            debit = newDebit;
         }
         return debit;
     }
@@ -38,6 +51,17 @@ public abstract class Accounts {
         accName = newName;
     }
 
-    public abstract void atmTerminal();
+    public void addFundsDebit(double amount) {
+        debit += amount;
+    }
+
+    public void payDebtCredit(double amount) {
+        if (credit - amount >= 0) {
+            credit -= amount;
+        }
+    }
+
+    public abstract void atmTerminal(String action, double amount);
+    public abstract void atmPrint();
 
 }
