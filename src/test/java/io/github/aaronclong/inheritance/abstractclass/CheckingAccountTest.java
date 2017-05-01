@@ -1,4 +1,4 @@
-package io.github.aaronclong.inheritance;
+package io.github.aaronclong.inheritance.abstractclass;
 
 import org.junit.Assert;
 import org.junit.Before;
