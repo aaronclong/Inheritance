@@ -16,12 +16,12 @@ public class RotateArray<E> extends ArrayList<E> {
     public void rotate(int rotateDegree) {
         int size = getSize();
         if (rotateDegree-1 <= size) {
-            tmp = get(size);
-            for (int i = size; rotateDegree > -1; i--) {
-                for (int z = i; z >= 0; z--) {
+            //tmp = get(size);
+            for (int i = 0; i < rotateDegree; i++) {
+                for (int z = size; z > 0; z--) {
                     copy(z, z-1);
                 }
-                set(0, tmp);
+                //set(0, tmp);
             }
         }
     }
