@@ -20,7 +20,7 @@ public class Inventory {
     public double getInventorySum() {
         double price = 0;
         for (Product p : inventory) {
-            price += p.getQuantity() * p.getPrice();
+            price += p.getTotalValue();
         }
         return price;
     }
@@ -57,6 +57,6 @@ class Product {
         return price;
     }
 
-    public String getProductID() { return id; }
+    public double getTotalValue() { return getQuantity() * getPrice(); }
 
 }
