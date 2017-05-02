@@ -9,5 +9,12 @@ public class ATM {
         checking.setOwner("Molly");
         System.out.println("Checking account");
         checking.atmTerminal("WITHDRAW", 500);
+        SavingsAccount savings = new SavingsAccount(10000);
+        savings.setOwner("John");
+        System.out.println("Business account");
+        savings.atmTerminal("ADDFUNDS", 45000);
+        BusinessAccount businessAccount = new BusinessAccount(100000);
+        businessAccount.nameBusiness("Zip Code Wilmington");
+        businessAccount.atmTerminal("ADDFUNDS", 3000);
     }
 }
