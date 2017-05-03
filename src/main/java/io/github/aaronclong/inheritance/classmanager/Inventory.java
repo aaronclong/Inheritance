@@ -24,6 +24,19 @@ public class Inventory {
         }
         return price;
     }
+
+    public static void main(String[] args) {
+        Inventory online = new Inventory();
+        Product hayaoMiyazakiPoster = new Product("miyazaki");
+        hayaoMiyazakiPoster.setQuantity(700);
+        hayaoMiyazakiPoster.setPrice(15);
+        Product lordOfTheRings = new Product("Lord of the Rings");
+        hayaoMiyazakiPoster.setQuantity(1000);
+        hayaoMiyazakiPoster.setPrice(9);
+        online.addItem(hayaoMiyazakiPoster);
+        online.addItem(lordOfTheRings);
+        System.out.println(online.getInventorySum());
+    }
 }
 
 class Product {
